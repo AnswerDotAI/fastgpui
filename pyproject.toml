@@ -1,0 +1,39 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "fastgpui"
+dynamic = ["version"]
+description = "Drive GPUI apps from Python, as fastcdp drives Chrome"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Nathan Cooper", email = "nathanacooper@proton.me"}]
+classifiers = ["Programming Language :: Rust", "Programming Language :: Python :: Implementation :: CPython"]
+dependencies = ["pillow"]
+
+[project.optional-dependencies]
+dev = ["fastship>=0.0.11", "maturin>=1.0,<2.0", "pytest"]
+
+[project.entry-points.pyskills]
+fastgpui = "fastgpui.skill"
+
+[project.urls]
+Homepage = "https://github.com/AnswerDotAI/fastgpui"
+Repository = "https://github.com/AnswerDotAI/fastgpui"
+Issues = "https://github.com/AnswerDotAI/fastgpui/issues"
+
+[tool.fastship]
+branch = "main"
+
+[tool.maturin]
+manifest-path = "py/Cargo.toml"
+python-source = "python"
+module-name = "fastgpui._core"
+
+[tool.uv]
+cache-keys = [{ file = "pyproject.toml" }, { file = "Cargo.toml" }, { file = "py/Cargo.toml" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
