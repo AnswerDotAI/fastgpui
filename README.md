@@ -1,6 +1,6 @@
 # fastgpui
 
-fastgpui lets a script drive a GPUI app off screen, the way fastcdp drives Chrome through its debugging port. It is for checking UI work in a real app, from Python, without a window on your desktop. The app runs in GPUI's headless app with the real text system and renderer, and its windows are built by its own start-up code. Commands are gpui-kit's test operations: find elements, click, drag, type and press keys, read the clipboard, and take screenshots.
+fastgpui lets a script drive a GPUI app off screen, the way [fastcdp](https://github.com/answerdotai/fastcdp) drives Chrome through its debugging port. It is for checking UI work in a real app, from Python, without a window on your desktop. The app runs in GPUI's headless app with the real text system and renderer, and its windows are built by its own start-up code. Commands are gpui-kit's test operations: find elements, click, drag, type and press keys, read the clipboard, and take screenshots.
 
 ## Add it to an app
 
